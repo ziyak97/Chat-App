@@ -1,0 +1,14 @@
+/* Just some basic styles */
+
+.container {
+    max-width: 650px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.time {
+    color: gray;
+    font-size: 0.7rem;
+}

@@ -1,0 +1,90 @@
+<!-- So I broke the script files down into three seperate -->
+<!-- files to make it easier to read -->
+<!-- I also imported all the firebase scripts required -->
+<!-- I mainly used bootstrap for styling -->
+<!-- script heirarchy is chat.js -> ui.js -> app.js -->
+<!-- I have also used an external dateFns library -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Chat App</h1>
+        <div class="buttons text-center my-3">
+            <p>Select a chatroom:</p>
+            <button class="btn btn-outline-success active" id="general">#general</button>
+            <button class="btn btn-outline-success" id="programming">#programming</button>
+            <button class="btn btn-outline-success" id="music">#music</button>
+            <button class="btn btn-outline-success" id="gaming">#gaming</button>
+        </div>
+        <div class="chats my-3">
+            <ul class="list-group"></ul>
+        </div>
+        <div class="text-center">
+            <form class="message-input">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Enter message:</span>
+                    </div>
+                    <input type="text" class="form-control" name="message" placeholder="enter message" required autocomplete="off">
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-info" value="send">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="text-center">
+            <form class="username-input">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Update name:</span>
+                    </div>
+                    <input type="text" class="form-control" name="username" placeholder="update username" required autocomplete="off">
+                    <div class="input-group-append">
+                        <input type="submit" class="btn btn-info" value="update">
+                    </div>
+                </div>
+            </form>
+            <div class="update-msg"></div>
+        </div>
+    </div>
+
+
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBjgnjuO0wubQJKVOCjLhHF1T5qv1-F57U",
+            authDomain: "chat-app-6820a.firebaseapp.com",
+            databaseURL: "https://chat-app-6820a.firebaseio.com",
+            projectId: "chat-app-6820a",
+            storageBucket: "chat-app-6820a.appspot.com",
+            messagingSenderId: "115869908696",
+            appId: "1:115869908696:web:a1bd4ccf75b6565b65a1ad",
+            measurementId: "G-J5ZDQGWKLD"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <script src="chat.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
